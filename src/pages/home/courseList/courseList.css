@@ -1,0 +1,11 @@
+.container {
+  margin: 2em 6em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  overflow: hidden;
+}
+.course-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}

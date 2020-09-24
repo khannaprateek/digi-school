@@ -1,0 +1,36 @@
+.accordian-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 70vh;
+}
+
+.accordian {
+  width: 960px;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  padding: 0;
+  box-shadow: 0 0 30px black;
+  list-style-type: none;
+}
+.accordian li {
+  width: 20%;
+  box-shadow: -4px 0px 20px rgba(0, 0, 0, 0.8);
+  transition: all 0.8s ease;
+}
+.input:checked li {
+  width: 10%;
+}
+.accordian li:checked {
+  width: 60%;
+}
+
+.edit-btn {
+  color: white;
+  background: skyblue;
+  border: none;
+  padding: 10px;
+  float: right;
+}

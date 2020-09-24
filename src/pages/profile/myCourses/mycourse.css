@@ -1,0 +1,7 @@
+.calender {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin: 36px;
+  min-height: 76vh;
+}

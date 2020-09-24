@@ -1,0 +1,23 @@
+.page-num {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.page-link {
+  width: 4%;
+  font: 15px bold;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: crimson;
+  border: 2px crimson;
+  color: white;
+}
+
+.page-link:hover,
+.page-link:focus {
+  background-color: blue;
+}
+
+.page-link:focus {
+  outline: none;
+}

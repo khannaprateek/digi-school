@@ -1,0 +1,23 @@
+.addcourse-form {
+  margin: 5em auto;
+  width: 65%;
+  display: grid;
+  flex-direction: column;
+  border: solid black;
+}
+.addcourse-form > * {
+  padding: 10px;
+  font: 18px;
+}
+.course-title {
+  width: 45%;
+}
+.course-desc {
+  resize: none;
+  height: 20vh;
+  width: 45%;
+}
+
+.addcourse-form input[type="time"] {
+  width: 30%;
+}
