@@ -1,19 +1,17 @@
-import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import Axios from "axios";
 import "./login.css";
 import { signin } from "../../store/actions";
 
 const Login = (props) => {
   const { signin } = props;
-  const history = useHistory();
-  const [user, setUser] = useState({ email: "", password: "" });
+  let user;
   const onChangeHandler = (property, value) => {
-    setUser({
+    user = {
       ...user,
       [property]: value,
-    });
+    };
   };
   const handleLogIn = (event) => {
     event.preventDefault();

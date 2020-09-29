@@ -1,36 +1,63 @@
 .accordian-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  height: 70vh;
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+  margin: 2em;
 }
 
-.accordian {
-  width: 960px;
-  height: 300px;
+.accord-input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+/* Accordion styles */
+.tab {
+  margin-bottom: 5px;
+  border-radius: 8px;
   overflow: hidden;
-  display: flex;
-  padding: 0;
-  box-shadow: 0 0 30px black;
-  list-style-type: none;
-}
-.accordian li {
-  width: 20%;
-  box-shadow: -4px 0px 20px rgba(0, 0, 0, 0.8);
-  transition: all 0.8s ease;
-}
-.input:checked li {
-  width: 10%;
-}
-.accordian li:checked {
-  width: 60%;
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  color: white;
 }
 
-.edit-btn {
-  color: white;
-  background: skyblue;
-  border: none;
-  padding: 10px;
-  float: right;
+.tab-label {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background: #2c3e50;
+  font-weight: bold;
+  cursor: pointer;
+  /* Icon */
+}
+
+.tab-label:hover {
+  background: #1a242f;
+}
+
+.tab-label::after {
+  content: "\276F";
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  transition: all 0.35s;
+}
+
+.tab-content {
+  max-height: 0;
+  padding: 0 1em;
+  color: #2c3e50;
+  background: white;
+  transition: all 0.35s;
+}
+
+.accord-input:checked + .tab-label {
+  background: #1a242f;
+}
+
+.accord-input:checked + .tab-label::after {
+  transform: rotate(90deg);
+}
+
+.accord-input:checked ~ .tab-content {
+  max-height: 100vh;
+  padding: 1em;
 }

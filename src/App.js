@@ -1,27 +1,23 @@
 import React from "react";
-import { connect } from "react-redux";
-import { BrowserRouter as Router } from "react-router-dom";
+import { Router } from "react-router-dom";
 import Header from "./component/header/Header";
 import AppRoutes from "./component/appRoutes/AppRoutes";
-import Loader from "./component/loader/Loader";
+import { history } from "./common/utils/history";
+import store from "./store/store";
+import { Provider } from "react-redux";
 
 import "./App.css";
 
 function App(props) {
   return (
-    <div className="App">
-      <Router>
-        <Header />
-        {props.isLoading ? <Loader /> : <AppRoutes />}
-      </Router>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Router history={history}>
+          <Header />
+          <AppRoutes />
+        </Router>
+      </div>
+    </Provider>
   );
 }
-const mapStateToProps = (state) => {
-  return {
-    isLoading: state.isLoading,
-  };
-};
-// const mapDispatchToProps = (dispatch) => {};
-
-export default connect(mapStateToProps, null)(App);
+export default App;

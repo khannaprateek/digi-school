@@ -29,7 +29,7 @@ class Service {
 
   putRequest = (url, obj) => {
     return new Promise((resolve, reject) => {
-      Axios.put(url, obj)
+      Axios.put(getUrl(url), obj)
         .then((res) => {
           resolve(res);
         })

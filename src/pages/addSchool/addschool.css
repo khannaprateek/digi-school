@@ -1,4 +1,5 @@
 .form-container {
+  object-fit: contain;
   margin: auto;
   color: white;
   display: flex;

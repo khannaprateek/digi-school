@@ -1,0 +1,15 @@
+.add-course-btn {
+  border: none;
+  color: white;
+  background-color: darkblue;
+  padding: 1em;
+  border-radius: 35px 0;
+  margin: 20px;
+}
+.add-school-btn {
+  border: none;
+  color: white;
+  background-color: blue;
+  padding: 1em;
+  border-radius: 0 35px;
+}

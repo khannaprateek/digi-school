@@ -1,6 +1,4 @@
-import Axios from "axios";
-
-const initialState = {
+export const initialState = {
   courseList: [],
   isLoading: false,
   isAuth: false,
@@ -10,22 +8,32 @@ const initialState = {
 };
 
 const rootReducer = (state = initialState, action) => {
+  console.log(action);
   switch (action.type) {
     case "SET-LOADING":
       return {
         ...state,
         isLoading: action.val,
       };
+    case "SET-STATE":
+      console.log(action.payload);
+      if (action.payload.state.length !== 0) {
+        return {
+          ...action.payload.state,
+        };
+      } else {
+        return initialState;
+      }
     case "SET-COURSES":
+      console.log("SET_COURSES triggered");
       return {
         ...state,
-        courseList: action.courseList,
+        courseList: action.payload,
         isLoading: false,
       };
     case "SIGNUP":
       return {
         ...state,
-        isAuth: true,
         error: action.error,
       };
     case "LOGIN":
@@ -40,6 +48,11 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         isAuth: false,
         user: {},
+      };
+    case "UPDATE_USER":
+      return {
+        ...state,
+        user: action.payload,
       };
     default:
       return state;

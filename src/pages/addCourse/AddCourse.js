@@ -1,7 +1,5 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import services from "../../services";
 import { addCourse } from "../../store/actions";
 import "./addcourse.css";
 
@@ -31,7 +29,7 @@ const AddCourse = () => {
         <input
           className="course-title"
           type="text"
-          name="Course-Title"
+          name="title"
           placeholder="Title of the course"
           onChange={(event) =>
             onChangeHandler(event.target.name, event.target.value)
@@ -39,25 +37,25 @@ const AddCourse = () => {
         />
         <textarea
           className="course-desc"
-          name="Course-Description"
+          name="description"
           placeholder="What is this course about..."
           onChange={(event) =>
             onChangeHandler(event.target.name, event.target.value)
           }
         />
-        <lable>Start Time </lable>
+        <label>Start Time </label>
         <input
           clasName="start-time"
-          name="start-time"
+          name="start"
           type="time"
           onChange={(event) =>
             onChangeHandler(event.target.name, event.target.value)
           }
         />
-        <lable>End Time </lable>
+        <label>End Time </label>
         <input
           clasName="class-time"
-          name="end-time"
+          name="end"
           type="time"
           onChange={(event) =>
             onChangeHandler(event.target.name, event.target.value)
@@ -66,7 +64,7 @@ const AddCourse = () => {
         <span className="age-range">
           <input
             type="number"
-            name="Min-Age"
+            name="min"
             placeholder="Min Age"
             onChange={(event) =>
               onChangeHandler(event.target.name, event.target.value)
@@ -74,7 +72,7 @@ const AddCourse = () => {
           />
           <input
             type="number"
-            name="Max-Age"
+            name="max"
             placeholder="Max Age"
             onChange={(event) =>
               onChangeHandler(event.target.name, event.target.value)
@@ -84,6 +82,7 @@ const AddCourse = () => {
         <label>School</label>
         <select
           name="school"
+          value="School 5"
           onChange={(event) =>
             onChangeHandler(event.target.name, event.target.value)
           }
@@ -92,9 +91,7 @@ const AddCourse = () => {
           <option value="School 2">School 2</option>
           <option value="School 3">School 3</option>
           <option value="School 4">School 4</option>
-          <option selected value="School 5">
-            School 5
-          </option>
+          <option value="School 5">School 5</option>
         </select>
         <label>Location</label>
         <select

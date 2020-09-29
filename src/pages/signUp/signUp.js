@@ -15,6 +15,7 @@ const SignUp = (props) => {
     props.signup(user);
     event.preventDefault();
   };
+  console.log(props);
   return (
     <div className="signup-bg">
       <form className="signup-container" onSubmit={handleSubmit}>
@@ -31,6 +32,7 @@ const SignUp = (props) => {
           className="input"
           type="email"
           name="email"
+          defaultValue={props.location.state}
           onChange={(event) =>
             onChangeHandler(event.target.name, event.target.value)
           }

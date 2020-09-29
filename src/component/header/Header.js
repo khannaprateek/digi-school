@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link, useLocation, useHistory } from "react-router-dom";
+import { logOut } from "../../store/actions";
 import "./header.css";
 
 const Header = (props) => {
@@ -9,9 +10,8 @@ const Header = (props) => {
 
   const handleLogOut = () => {
     history.replace("/home");
-    props.logOut();
+    props.logOutUser(props.user);
   };
-  console.log(props.user.name);
   return (
     <div className="header">
       <span className="header-title">DIGI SCHOOL</span>
@@ -29,9 +29,9 @@ const Header = (props) => {
           )
         ) : (
           <div className="drop-down">
-            <div className="drop-btn">{props.user.name}</div>
+            <div className="drop-btn">Hello {props.user.name}!</div>
             <div className="dropdown-content">
-              <Link className="drop-link" to="/profile/courses">
+              <Link className="drop-link" to="/courses">
                 My Courses
               </Link>
               <Link className="drop-link" to="/profile">
@@ -56,7 +56,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    logOut: () => dispatch({ type: "LOGOUT" }),
+    logOutUser: (user) => dispatch(logOut(user)),
   };
 };
 
